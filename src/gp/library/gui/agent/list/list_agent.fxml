@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxWidth="1.7976931348623157E308" prefHeight="135.0" prefWidth="957.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gp.library.gui.agent.list.List_agentController">
+   <children>
+      <AnchorPane layoutX="26.0" layoutY="13.0" prefHeight="109.0" prefWidth="800.0" style="-fx-background-color: fff;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <MaterialDesignIconView fill="#343a3e" glyphName="QRCODE_SCAN" layoutX="14.0" layoutY="40.0" size="30" />
+            <Text fill="#bac3d0" layoutX="59.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MATRICULE">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="matricule" fill="#343a3e" layoutX="59.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="545-NHJ">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#bac3d0" layoutX="185.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="nom" fill="#343a3e" layoutX="185.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#bac3d0" layoutX="361.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SALAIRE">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="salaire" fill="#343a3e" layoutX="361.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SALAIRE">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#bac3d0" layoutX="185.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POSTNOM">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="postnom" fill="#343a3e" layoutX="185.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POSTNOM">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#bac3d0" layoutX="361.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GENRE">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="genre" fill="#343a3e" layoutX="361.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#bac3d0" layoutX="532.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ANNIVERSSAIRE">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="dateNaiss" fill="#343a3e" layoutX="532.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15.02.1997">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+            </Text>
+            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="705.0" layoutY="24.0" onAction="#updateAgent" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #3070ac; -fx-border-radius: 4em; -fx-background-radius: 4em;" text=" " textFill="WHITE" AnchorPane.rightAnchor="50.0">
+               <font>
+                  <Font name="Century Gothic Bold" size="10.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="14" />
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="705.0" layoutY="69.0" onAction="#deleteData" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #ff3705; -fx-border-radius: 4em; -fx-background-radius: 4em;" text=" " textFill="WHITE" AnchorPane.rightAnchor="50.0">
+               <font>
+                  <Font name="Century Gothic Bold" size="10.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="14" />
+               </graphic>
+            </JFXButton>
+            <Text fill="#bac3d0" layoutX="532.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SERVICE">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="service" fill="#343a3e" layoutX="532.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SERVICE">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#bac3d0" layoutX="691.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FONCTION">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="fonction" fill="#343a3e" layoutX="691.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FONCTION">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+            </Text>
+         </children>
+         <effect>
+            <DropShadow color="#d3d3d3" />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

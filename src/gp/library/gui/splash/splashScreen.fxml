@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: #32373B;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="gp.library.gui.splash.SplashScreenController">
+   <children>
+      <JFXSpinner layoutX="234.0" layoutY="142.0" />
+      <Text fx:id="messageError" fill="#ee8001" layoutX="80.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GESTION DE PAYEMENT DES AGENTS PAR PRESENCE">
+         <font>
+            <Font name="Century Gothic Bold" size="14.0" />
+         </font>
+      </Text>
+      <MaterialDesignIconView fill="#8facbf" glyphName="QRCODE" layoutX="225.0" layoutY="99.0" size="50" />
+      <Text fx:id="messageError1" fill="#838383" layoutX="103.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chargement en cours Veuillew pentienter...">
+         <font>
+            <Font name="Century Gothic Bold" size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

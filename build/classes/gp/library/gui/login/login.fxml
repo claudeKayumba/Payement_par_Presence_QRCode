@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane id="AnchorPane" prefHeight="440.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gp.library.gui.login.LoginController">
+   <children>
+      <HBox style="-fx-background-color: #FFFFFF;">
+         <children>
+            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="430.0" prefWidth="297.0" style="-fx-background-color: #32373B;">
+               <children>
+                  <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="271.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="150.0" style="-fx-border-color: #ff993e; -fx-background-color: #333645; -fx-border-radius: 4em; -fx-background-radius: 4em;" text="CONFIGURER SERVEUR" textFill="#ff993e">
+                     <font>
+                        <Font name="Century Gothic Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Text fill="WHITE" layoutX="105.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue">
+                     <font>
+                        <Font name="Century Gothic Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <VBox alignment="CENTER" layoutX="37.0" layoutY="44.0" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: #dee4e2; -fx-border-radius: 4em;">
+                     <children>
+                        <FontAwesomeIconView fill="#ff993e" glyphName="XING" size="25" />
+                     </children>
+                  </VBox>
+                  <Label layoutX="62.0" layoutY="180.0" prefHeight="50.0" prefWidth="173.0" text="Connectez-vous pour avoir accès aux données" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="20" />
+                     </graphic>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="325.0" prefWidth="377.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="179.0" prefWidth="377.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Text fill="#262932" layoutX="157.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </Text>
+                              <VBox alignment="CENTER" layoutX="163.0" layoutY="85.0" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: #ff993e; -fx-border-radius: 4em;">
+                                 <children>
+                                    <FontAwesomeIconView fill="#262932" glyphName="USER" size="30" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <GridPane vgap="10.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #E6EAEF; -fx-background-radius: 2px; -fx-border-radius: 2px;">
+                                 <children>
+                                    <FontAwesomeIconView fill="#aeafb1" glyphName="USER" size="20" />
+                                    <TextField fx:id="txtUsername" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Username" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #E6EAEF; -fx-background-radius: 2px; -fx-border-radius: 2px;" GridPane.rowIndex="1">
+                                 <children>
+                                    <FontAwesomeIconView fill="#aeafb1" glyphName="KEY" size="20" />
+                                    <PasswordField fx:id="txtPassword" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Password" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </HBox.margin>
+                                    </PasswordField>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                              <JFXButton alignment="CENTER" buttonType="RAISED" onAction="#connectUser" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ff993e; -fx-border-radius: 4em; -fx-background-radius: 4em;" text="LOGIN" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXCheckBox checkedColor="#ff993e" text="Se souvenir de mon choix" textFill="#5e5d5d" unCheckedColor="#b2afaf" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Century Gothic Bold Italic" size="11.0" />
+                                 </font>
+                              </JFXCheckBox>
+                           </children>
+                           <padding>
+                              <Insets left="40.0" right="40.0" />
+                           </padding>
+                        </GridPane>
+                        <Text fx:id="messageError" fill="#ed3000" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom d'utilisateur ou Mot de passe incorect">
+                           <font>
+                              <Font name="Century Gothic Bold Italic" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+         <effect>
+            <DropShadow color="#757575" />
+         </effect>
+      </HBox>
+   </children>
+</StackPane>
