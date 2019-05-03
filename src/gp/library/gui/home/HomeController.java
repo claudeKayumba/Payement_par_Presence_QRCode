@@ -79,6 +79,12 @@ public class HomeController implements Initializable {
         setButtonStyle((JFXButton) event.getSource());
         MyWindow.makeJira(container, dashboard);
     }
+    
+    @FXML
+    private void goToPresence(ActionEvent event) {
+        setButtonStyle((JFXButton) event.getSource());
+        MyWindow.makeURLJira(container, getClass().getResource(MyConstant.PRESENCE));
+    }
 
     @FXML
     private void goToSettings(ActionEvent event) {

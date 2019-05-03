@@ -181,6 +181,19 @@ public class DatabaseHelper {
         }
         return false;
     }
+    
+    public int generateID(String table, String attribut) throws Exception {
+        try {
+            pst = Database.getConnection().prepareStatement("SELECT COALESCE(MAX("+attribut+"),0)+1 FROM " + table + "");
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                return (rs.getInt(1));
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new Exception(e.getMessage());
+        }
+        return 0;
+    }
 
     public boolean connectUser(ModeleUser user) throws SQLException, ClassNotFoundException {
         pst = Database.getConnection().prepareStatement("SELECT * FROM tUsers WHERE username = '" + user.getUsername() + "' and passwords = '" + user.getPassword() + "'");

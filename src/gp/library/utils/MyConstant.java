@@ -20,6 +20,9 @@ public class MyConstant {
     public static final String AVANTAGERETENU = "/gp/library/gui/avantage/avantageRetenu.fxml";
     public static final String SERVICEFONCTION = "/gp/library/gui/service/serviceFonction.fxml";
     public static final String USER = "/gp/library/gui/user/user.fxml";
+    public static final String PRESENCE = "/gp/library/gui/presence/presence.fxml";
+    public static final String UPDATE_PRESENCE = "/gp/library/gui/presence/update/update_presence.fxml";
+    public static final String LIST_PRESENCE = "/gp/library/gui/presence/list/list_presence.fxml";
     
     public static String AVANTAGE = "AVANTAGE";
     public static String RETENU = "RETENU";

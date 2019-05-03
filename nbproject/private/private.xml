@@ -3,14 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/G:/JENNY/Gestion%20Pesence/src/gp/library/database/dao/DatabaseHelper.java</file>
-            <file>file:/G:/JENNY/Gestion%20Pesence/src/gp/library/utils/MyWindow.java</file>
-            <file>file:/G:/JENNY/Gestion%20Pesence/src/gp/library/gui/settings/SettingsController.java</file>
-            <file>file:/G:/JENNY/Gestion%20Pesence/src/gp/library/gui/splash/SplashScreenController.java</file>
-            <file>file:/G:/JENNY/Gestion%20Pesence/src/gp/library/gui/login/LoginController.java</file>
-            <file>file:/G:/JENNY/Gestion%20Pesence/src/gp/library/gui/service/ServiceFonctionController.java</file>
-            <file>file:/G:/JENNY/Gestion%20Pesence/src/gp/library/model/ModeleUser.java</file>
-            <file>file:/G:/JENNY/Gestion%20Pesence/src/gp/library/gui/splash/splashScreen.fxml</file>
+            <file>file:/G:/JENNY/GestionPesence/src/gp/library/gui/presence/list/List_presenceController.java</file>
+            <file>file:/G:/JENNY/GestionPesence/src/gp/library/utils/MyConstant.java</file>
+            <file>file:/G:/JENNY/GestionPesence/src/gp/library/gui/presence/PresenceController.java</file>
+            <file>file:/G:/JENNY/GestionPesence/src/gp/library/gui/user/UserController.java</file>
+            <file>file:/G:/JENNY/GestionPesence/src/gp/library/gui/settings/SettingsController.java</file>
+            <file>file:/G:/JENNY/GestionPesence/src/gp/library/database/dao/DatabaseHelper.java</file>
+            <file>file:/G:/JENNY/GestionPesence/src/gp/library/gui/home/HomeController.java</file>
+            <file>file:/G:/JENNY/GestionPesence/src/gp/library/gui/main/Main.java</file>
+            <file>file:/G:/JENNY/GestionPesence/src/gp/library/utils/MyWindow.java</file>
         </group>
     </open-files>
 </project-private>

@@ -13,6 +13,8 @@ import gp.library.model.ModeleUser;
 import gp.library.utils.MyWindow;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -44,6 +46,7 @@ public class UserController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         try {
+            txt_id.setText(""+helper.generateID("tUsers", "code"));
             helper.fillListView(list_users,FontAwesome.Glyph.USER, "SELECT code as id, CONCAT(username,' : ',passwords) as designation FROM tUsers");
         } catch (Exception e) {
         }
@@ -51,7 +54,12 @@ public class UserController implements Initializable {
 
     @FXML
     private void initFields(ActionEvent event) {
-        MyWindow.initFields(txt_id, txt_username, txt_password);
+        try {
+            MyWindow.initFields(txt_id, txt_username, txt_password);
+            txt_id.setText(""+helper.generateID("tUsers", "code"));
+        } catch (Exception ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
@@ -69,6 +77,8 @@ public class UserController implements Initializable {
                 if (helper.update(user)) {
                     helper.fillListView(list_users,FontAwesome.Glyph.USER, "SELECT code as id, CONCAT(username,' : ',passwords) as designation FROM tUsers");
                     MyWindow.dialogAvertissement("Message", "Enregistré");
+                    MyWindow.initFields(txt_id, txt_username, txt_password);
+                    txt_id.setText(""+helper.generateID("tUsers", "code"));
                 }
             } else {
                 MyWindow.dialogAvertissement("Avertissement", "Completez les champs vides");

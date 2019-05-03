@@ -1,81 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDatePicker?>
-<?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="376.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="gp.library.gui.presence.PresenceController">
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gp.library.gui.presence.PresenceController">
    <children>
-      <AnchorPane prefHeight="347.0" prefWidth="510.0" style="-fx-background-color: fff;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <VBox layoutX="102.0" layoutY="47.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <effect>
-            <DropShadow color="#d7d7d7" />
+            <DropShadow color="#e4e4e4" height="50.0" radius="24.5" width="50.0" />
          </effect>
          <children>
-            <GridPane layoutX="119.0" layoutY="50.0" prefHeight="265.0" prefWidth="350.0" vgap="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
+            <HBox alignment="CENTER_RIGHT" prefHeight="57.0" prefWidth="880.0" style="-fx-background-color: #F8F8F8;">
                <children>
-                  <JFXTextField fx:id="txt_nom" focusColor="#ff993e" labelFloat="true" promptText="Nom">
-                     <font>
-                        <Font name="Century Gothic" size="16.0" />
-                     </font>
-                  </JFXTextField>
-                  <JFXTextField fx:id="txt_postnom" focusColor="#ff993e" labelFloat="true" layoutX="10.0" layoutY="14.0" promptText="Postnom" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="Century Gothic" size="16.0" />
-                     </font>
-                  </JFXTextField>
-                  <JFXDatePicker fx:id="txt_date" defaultColor="#ff993e" editable="false" maxWidth="1.7976931348623157E308" promptText="Date de Naissance" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets left="10.0" />
-                     </GridPane.margin>
-                  </JFXDatePicker>
-                  <HBox alignment="CENTER" GridPane.rowIndex="3">
+                  <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
                      <children>
-                        <JFXButton alignment="CENTER" buttonType="RAISED" graphicTextGap="20.0" onAction="#initFields" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #ff993e; -fx-border-radius: 4em; -fx-background-radius: 4em;" text="Initialiser" textFill="WHITE">
+                        <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="215.0" layoutY="21.0" onAction="#fillData" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #13b172; -fx-border-radius: 4em; -fx-background-radius: 4em;" text="Actualiser" textFill="WHITE">
                            <font>
-                              <Font name="Century Gothic Bold" size="14.0" />
+                              <Font name="Century Gothic Bold" size="10.0" />
                            </font>
                            <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="20" />
+                              <MaterialDesignIconView fill="WHITE" glyphName="ROTATE_RIGHT" size="20" />
                            </graphic>
                            <HBox.margin>
-                              <Insets right="10.0" />
+                              <Insets />
                            </HBox.margin>
                         </JFXButton>
-                        <JFXButton alignment="CENTER" buttonType="RAISED" graphicTextGap="20.0" layoutX="10.0" layoutY="10.0" onAction="#saveData" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #39C3DD; -fx-border-radius: 4em; -fx-background-radius: 4em;" text="Enregister" textFill="WHITE">
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="215.0" layoutY="21.0" onAction="#saveAgent" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #3070ac; -fx-border-radius: 4em; -fx-background-radius: 4em;" text=" " textFill="WHITE">
                            <font>
-                              <Font name="Century Gothic Bold" size="14.0" />
+                              <Font name="Century Gothic Bold" size="10.0" />
                            </font>
                            <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="CHECK_CIRCLE" size="20" />
+                              <MaterialDesignIconView fill="WHITE" glyphName="QRCODE" size="20" />
                            </graphic>
                            <HBox.margin>
-                              <Insets left="10.0" />
+                              <Insets left="20.0" />
                            </HBox.margin>
                         </JFXButton>
                      </children>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
                   </HBox>
+                  <VBox alignment="CENTER" layoutX="473.0" layoutY="10.0" prefHeight="71.0" prefWidth="287.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="287.0" style="-fx-border-color: #3070ac; -fx-border-radius: 4em;">
+                           <children>
+                              <TextField fx:id="txtUsername1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="46.0" prefWidth="221.0" promptText="Rechercher" style="-fx-background-color: transparent;">
+                                 <font>
+                                    <Font name="Century Gothic" size="16.0" />
+                                 </font>
+                              </TextField>
+                              <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #3070ac; -fx-border-radius: 4em; -fx-background-radius: 4em;" text=" " textFill="WHITE">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="10.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="15" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </VBox>
                </children>
-            </GridPane>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox fx:id="box_container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="980.0" style="-fx-background-color: fff;">
+                     <children>
+                        <Pagination fx:id="pagination" maxPageIndicatorCount="0" pageCount="0" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
          </children>
-      </AnchorPane>
+      </VBox>
    </children>
 </AnchorPane>

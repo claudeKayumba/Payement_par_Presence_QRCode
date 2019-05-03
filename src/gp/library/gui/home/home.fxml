@@ -35,7 +35,7 @@
                         <Font name="Segoe UI Bold" size="10.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" contentDisplay="TOP" layoutX="17.0" layoutY="110.0" maxWidth="1.7976931348623157E308" styleClass="side-menu-btn" text="Présence" textAlignment="CENTER" textFill="#8facbf">
+                  <JFXButton alignment="CENTER" contentDisplay="TOP" layoutX="17.0" layoutY="110.0" maxWidth="1.7976931348623157E308" onAction="#goToPresence" styleClass="side-menu-btn" text="Présence" textAlignment="CENTER" textFill="#8facbf">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>

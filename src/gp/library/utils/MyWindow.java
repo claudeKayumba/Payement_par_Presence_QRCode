@@ -38,11 +38,12 @@ import org.controlsfx.control.Notifications;
  * @author Admin
  */
 public class MyWindow {
-    
-    private static final String IMAGE_LOC = "/gp/library/gui/images/XING_104px.png";
-    
+
+    private static final String IMAGE_LOC = "/gp/library/gui/images/qrLogo.png";
+
     private static void setStageIcon(Stage stage) {
-        stage.getIcons().add(new Image(IMAGE_LOC));
+        stage.getIcons().add(new Image(MyWindow.class.getResourceAsStream(IMAGE_LOC)));
+//        stage.getIcons().add(new Image(IMAGE_LOC));
     }
 
     public static void createWindow(URL URL, String title, Stage parentStage, Boolean resizable) {
