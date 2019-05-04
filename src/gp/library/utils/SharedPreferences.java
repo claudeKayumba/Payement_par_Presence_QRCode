@@ -83,4 +83,20 @@ public class SharedPreferences {
     public Boolean isConfigServer(){
         return this.prefs.getBoolean("isConfig", false);
     }
+    
+    public void setRememberMe(Boolean isRemember){
+        this.prefs.putBoolean("remeberMe", isRemember);
+    }
+    
+    public Boolean isRememberMe(){
+        return this.prefs.getBoolean("remeberMe", false);
+    }
+    
+    public String getUserName() {
+        return this.prefs.get("userName", "");
+    }
+
+    public void setUserName(String userName) {
+        this.prefs.put("userName", userName);
+    }
 }
