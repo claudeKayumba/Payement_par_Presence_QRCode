@@ -12,7 +12,11 @@ public class Main extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         if (prefs.isConfigServer()) {
-            MyWindow.createWindow(getClass().getResource(MyConstant.LOGIN), "Login", null, Boolean.FALSE);
+            if (prefs.isRememberMe()) {
+                MyWindow.createWindow(getClass().getResource(MyConstant.HOME), "Gestion Présence", null, Boolean.TRUE);
+            } else{
+                MyWindow.createWindow(getClass().getResource(MyConstant.LOGIN), "Login", null, Boolean.FALSE);
+            }
         }else{
             MyWindow.createWindow(getClass().getResource(MyConstant.SERVER), "Configuration de Serveur", null, Boolean.FALSE);
         }

@@ -99,4 +99,12 @@ public class SharedPreferences {
     public void setUserName(String userName) {
         this.prefs.put("userName", userName);
     }
+    
+    public String getUserPass() {
+        return this.prefs.get("userPass", "");
+    }
+
+    public void setUserPass(String userPass) {
+        this.prefs.put("userPass", userPass);
+    }
 }

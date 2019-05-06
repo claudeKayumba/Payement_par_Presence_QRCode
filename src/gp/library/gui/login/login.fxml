@@ -109,7 +109,7 @@
                                     <Font name="Century Gothic Bold" size="14.0" />
                                  </font>
                               </JFXButton>
-                              <JFXCheckBox checkedColor="#ff993e" text="Se souvenir de mon choix" textFill="#5e5d5d" unCheckedColor="#b2afaf" GridPane.rowIndex="2">
+                              <JFXCheckBox fx:id="rd_remember" checkedColor="#ff993e" text="Se souvenir de mon choix" textFill="#5e5d5d" unCheckedColor="#b2afaf" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="Century Gothic Bold Italic" size="11.0" />
                                  </font>

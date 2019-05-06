@@ -5,10 +5,12 @@
  */
 package gp.library.gui.login;
 
+import com.jfoenix.controls.JFXCheckBox;
 import gp.library.database.dao.DatabaseHelper;
 import gp.library.model.ModeleUser;
 import gp.library.utils.MyConstant;
 import gp.library.utils.MyWindow;
+import gp.library.utils.SharedPreferences;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -28,6 +30,7 @@ public class LoginController implements Initializable {
 
     DatabaseHelper helper = new DatabaseHelper();
     ModeleUser user = ModeleUser.getInstance();
+    SharedPreferences prefs = new SharedPreferences();
 
     @FXML
     private TextField txtUsername;
@@ -35,6 +38,8 @@ public class LoginController implements Initializable {
     private PasswordField txtPassword;
     @FXML
     private Text messageError;
+    @FXML
+    private JFXCheckBox rd_remember;
 
     /**
      * Initializes the controller class.
@@ -52,6 +57,9 @@ public class LoginController implements Initializable {
             user.setUsername(txtUsername.getText().trim());
             user.setPassword(txtPassword.getText().trim());
             if (helper.connectUser(user)) {
+                prefs.setUserName(txtUsername.getText().trim());
+                prefs.setUserPass(txtPassword.getText().trim());
+                rememberMe();
                 ((Stage) txtUsername.getScene().getWindow()).close();
                 MyWindow.createWindow(getClass().getResource(MyConstant.HOME), "Gestion Présence", null, Boolean.TRUE);
             } else {
@@ -63,6 +71,14 @@ public class LoginController implements Initializable {
         }
         } catch (Exception e) {
             MyWindow.dialogAvertissement("Erreur", e.getMessage());
+        }
+    }
+    
+    private void rememberMe() {
+        if (rd_remember.isSelected()) {
+            prefs.setRememberMe(Boolean.TRUE);
+        } else{
+            prefs.setRememberMe(Boolean.FALSE);
         }
     }
 

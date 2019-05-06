@@ -66,6 +66,8 @@ public class SettingsController implements Initializable {
     private JFXListView<JFXButton> list_fonction;
     @FXML
     private AnchorPane containt_pane;
+    @FXML
+    private JFXToggleButton rememberOption;
 
     /**
      * Initializes the controller class.
@@ -82,6 +84,7 @@ public class SettingsController implements Initializable {
 
     private void init() {
         try {
+            rememberOption.setSelected(prefs.isRememberMe());
             helper.fillListView(liste_fonction,FontAwesome.Glyph.DESKTOP, "SELECT DISTINCT code, designation FROM tFonction");
             helper.fillListView(liste_service,FontAwesome.Glyph.COGS, "SELECT DISTINCT code, designation FROM tService");
             helper.fillListView(list_avantage,FontAwesome.Glyph.PLUS_CIRCLE, "SELECT DISTINCT id as code, designation FROM tAvantage");
@@ -247,6 +250,15 @@ public class SettingsController implements Initializable {
 
             prefs.setValueForUpdate(btn.getText());
         } catch (Exception e) {
+        }
+    }
+
+    @FXML
+    private void rememberMe(ActionEvent event) {
+        if (rememberOption.isSelected()) {
+            prefs.setRememberMe(Boolean.TRUE);
+        } else{
+            prefs.setRememberMe(Boolean.FALSE);
         }
     }
 }

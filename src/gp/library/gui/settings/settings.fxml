@@ -202,7 +202,7 @@
                                     <Insets left="10.0" />
                                  </padding>
                                  <children>
-                                    <JFXToggleButton contentDisplay="RIGHT" prefHeight="60.0" prefWidth="370.0" text="Rester Connecté" toggleColor="#ff993e" toggleLineColor="#ffd0a9">
+                                    <JFXToggleButton fx:id="rememberOption" contentDisplay="RIGHT" onAction="#rememberMe" prefHeight="60.0" prefWidth="370.0" text="Rester Connecté" toggleColor="#ff993e" toggleLineColor="#ffd0a9">
                                        <font>
                                           <Font name="Century Gothic Bold" size="14.0" />
                                        </font>

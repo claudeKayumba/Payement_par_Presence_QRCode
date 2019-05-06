@@ -5,6 +5,8 @@
  */
 package gp.library.gui.presence;
 
+import gp.library.utils.MyConstant;
+import gp.library.utils.MyWindow;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -41,7 +43,8 @@ public class PresenceController implements Initializable {
     }
 
     @FXML
-    private void saveAgent(ActionEvent event) {
+    void scanQRCode(ActionEvent event) {
+        MyWindow.createWindow(getClass().getResource(MyConstant.QRCODE_CAMERA_SCANNER), "Presence QRCode", null, Boolean.FALSE);
     }
     
 }

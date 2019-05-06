@@ -23,6 +23,7 @@ public class MyConstant {
     public static final String PRESENCE = "/gp/library/gui/presence/presence.fxml";
     public static final String UPDATE_PRESENCE = "/gp/library/gui/presence/update/update_presence.fxml";
     public static final String LIST_PRESENCE = "/gp/library/gui/presence/list/list_presence.fxml";
+    public static final String QRCODE_CAMERA_SCANNER = "/gp/library/gui/qrscanner/camera_scanner.fxml";
     
     public static String AVANTAGE = "AVANTAGE";
     public static String RETENU = "RETENU";

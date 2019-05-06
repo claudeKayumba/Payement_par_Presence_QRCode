@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="infiView" prefHeight="349.0" prefWidth="568.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <effect>
+      <DropShadow color="#d7d7d7" />
+   </effect>
+   <children>
+      <Pane layoutX="294.0" layoutY="230.0" prefHeight="111.0" prefWidth="257.0" style="-fx-background-color: fff;">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/QRCode2.png" />
+               </image>
+            </ImageView>
+            <Text fill="#bac3d0" layoutX="110.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SERVICE">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="service" fill="#343a3e" layoutX="110.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SERVICE">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#bac3d0" layoutX="111.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FONCTION">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="fonction" fill="#343a3e" layoutX="111.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FONCTION">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+            </Text>
+         </children>
+         <effect>
+            <DropShadow color="#e4e4e4" />
+         </effect>
+      </Pane>
+      <Text fx:id="matricule" fill="#343a3e" layoutX="116.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="545-NHJ">
+         <font>
+            <Font name="Century Gothic Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fill="#bac3d0" layoutX="116.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MATRICULE">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#bac3d0" layoutX="299.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="nom" fill="#343a3e" layoutX="299.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM">
+         <font>
+            <Font name="Century Gothic Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fill="#bac3d0" layoutX="299.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GENRE">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="genre" fill="#343a3e" layoutX="299.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M">
+         <font>
+            <Font name="Century Gothic Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fill="#bac3d0" layoutX="300.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POSTNOM">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="nom1" fill="#343a3e" layoutX="300.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POSTNOM">
+         <font>
+            <Font name="Century Gothic Bold" size="16.0" />
+         </font>
+      </Text>
+      <VBox layoutX="48.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: fff;">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" smooth="false" />
+         </children>
+         <effect>
+            <DropShadow color="#bfbfbf" />
+         </effect>
+      </VBox>
+   </children>
+</AnchorPane>
