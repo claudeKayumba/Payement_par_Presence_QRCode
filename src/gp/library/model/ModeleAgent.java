@@ -13,7 +13,7 @@ import java.sql.Date;
  */
 public class ModeleAgent {
 
-    private int id;
+    private String id;
     private String nom, postnom, genre;
     private ModeleFonctionService fonction;
     private ModeleService service;
@@ -25,7 +25,7 @@ public class ModeleAgent {
     public ModeleAgent() {
     }
 
-    public ModeleAgent(int id, String nom, String postnom, String genre, ModeleFonctionService fonction, ModeleService service, String dateNaiss, double salaire) {
+    public ModeleAgent(String id, String nom, String postnom, String genre, ModeleFonctionService fonction, ModeleService service, String dateNaiss, double salaire) {
         this.id = id;
         this.nom = nom;
         this.postnom = postnom;
@@ -36,11 +36,11 @@ public class ModeleAgent {
         this.salaire = salaire;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

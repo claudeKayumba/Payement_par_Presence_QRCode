@@ -5,6 +5,7 @@
  */
 package gp.library.database.dao;
 
+import com.google.zxing.WriterException;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import gp.library.database.Database;
@@ -13,6 +14,9 @@ import gp.library.model.ModeleAvantageRetenu;
 import gp.library.model.ModeleFonctionService;
 import gp.library.model.ModeleService;
 import gp.library.model.ModeleUser;
+import gp.library.utils.QRCode;
+import gp.library.utils.SharedPreferences;
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,14 +27,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.geometry.NodeOrientation;
 import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContentDisplay;
-import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
-import javafx.scene.text.TextAlignment;
-import org.controlsfx.glyphfont.FontAwesome;
 import org.controlsfx.glyphfont.FontAwesome.Glyph;
 import org.controlsfx.glyphfont.GlyphFont;
 import org.controlsfx.glyphfont.GlyphFontRegistry;
@@ -41,10 +41,11 @@ import org.controlsfx.glyphfont.GlyphFontRegistry;
  */
 public class DatabaseHelper {
 
+    SharedPreferences prefs = new SharedPreferences();
     PreparedStatement pst;
     ResultSet rs;
 
-    public boolean update(Object obj) throws ClassNotFoundException, SQLException {
+    public boolean update(Object obj) throws ClassNotFoundException, SQLException, WriterException, IOException {
 
         if (obj instanceof ModeleFonctionService) {
             ModeleFonctionService fonctionService = (ModeleFonctionService) obj;
@@ -72,9 +73,12 @@ public class DatabaseHelper {
             return true;
         } else if (obj instanceof ModeleAgent) {
             ModeleAgent agent = (ModeleAgent) obj;
-
-            pst = Database.getConnection().prepareCall("EXEC sp_update_agent ?,?,?,?,?,?,?,?");
-            pst.setInt(1, agent.getId());
+            byte[] qrCode = QRCode.getQRCodeByteArray(agent.getId(), 250, 250);
+            
+            rs = Database.getConnection().createStatement().executeQuery("SELECT * FROM tAgent WHERE matricule = '"+agent.getId()+"'");
+           
+            pst = Database.getConnection().prepareCall("EXEC sp_update_agent ?,?,?,?,?,?,?,?,?");
+            pst.setString(1, agent.getId());
             pst.setString(2, agent.getNom());
             pst.setString(3, agent.getPostnom());
             pst.setDate(4, Date.valueOf(agent.getDateNaiss()));
@@ -82,6 +86,7 @@ public class DatabaseHelper {
             pst.setDouble(6, agent.getSalaire());
             pst.setString(7, agent.getService().getDesignation());
             pst.setString(8, agent.getFonction().getDesignation());
+            pst.setBytes(9, qrCode);
 
             pst.executeUpdate();
 
@@ -101,7 +106,7 @@ public class DatabaseHelper {
         return false;
     }
 
-    public void fillListView(JFXListView<JFXButton> listView,Glyph iconName, String SQL) throws Exception {
+    public void fillListView(JFXListView<JFXButton> listView, Glyph iconName, String SQL) throws Exception {
         ObservableList<JFXButton> list = FXCollections.observableArrayList();
         rs = Database.getConnection().createStatement().executeQuery(SQL);
         String code = "";
@@ -154,7 +159,7 @@ public class DatabaseHelper {
             ModeleService service = new ModeleService();
             service.setDesignation(rs.getString("service"));
 
-            agent.setId(rs.getInt("id"));
+            agent.setId(rs.getString("matricule"));
             agent.setNom(rs.getString("nom"));
             agent.setPostnom(rs.getString("postnom"));
             agent.setGenre(rs.getObject("genre").toString());
@@ -164,7 +169,6 @@ public class DatabaseHelper {
             agent.setDateNaiss(rs.getObject("dateNaiss").toString());
             list.add(agent);
         }
-
         return list;
     }
 
@@ -180,11 +184,21 @@ public class DatabaseHelper {
             Logger.getLogger(DatabaseHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
+    }//SELECT FORMAT((NEXT VALUE FOR seqMatricule),CONCAT('AG-',YEAR(GETDATE()),'-00#'))
+
+    public Object getValue(String sql) throws ClassNotFoundException, SQLException {
+        Object object = null;
+        pst = Database.getConnection().prepareStatement(sql);
+        rs = pst.executeQuery();
+        while (rs.next()) {
+            object = (rs.getObject(1));
+        }
+        return object;
     }
-    
+
     public int generateID(String table, String attribut) throws Exception {
         try {
-            pst = Database.getConnection().prepareStatement("SELECT COALESCE(MAX("+attribut+"),0)+1 FROM " + table + "");
+            pst = Database.getConnection().prepareStatement("SELECT COALESCE(MAX(" + attribut + "),0)+1 FROM " + table + "");
             rs = pst.executeQuery();
             if (rs.next()) {
                 return (rs.getInt(1));

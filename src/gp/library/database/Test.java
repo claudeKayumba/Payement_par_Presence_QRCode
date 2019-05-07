@@ -22,21 +22,19 @@ public class Test {
 
     public static void main(String[] args) {
         Faker data = new Faker(Locale.FRANCE);
-        ModeleService service = ModeleService.getInstance();
+        ModeleFonctionService service = ModeleFonctionService.getInstance();
         DatabaseHelper helper = new DatabaseHelper();
         for (int i = 1; i < 20; i++) {
             try {
-                service.setCode(""+i);
-                service.setDesignation(data.company().industry());
+                service.setCode(i);
+                service.setDesignation(data.company().profession());
                 
                 if (helper.update(service)) {
                     System.out.println("ok");
                 } else {
                     System.out.println("pas ok");
                 }
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLException ex) {
+            } catch (Exception ex) {
                 Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

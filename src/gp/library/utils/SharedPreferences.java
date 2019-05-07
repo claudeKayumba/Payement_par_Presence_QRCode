@@ -107,4 +107,12 @@ public class SharedPreferences {
     public void setUserPass(String userPass) {
         this.prefs.put("userPass", userPass);
     }
+    
+    public String getAgentID(){
+        return prefs.get("agentID", "00");
+    }
+    
+    public void setAgentID(String id){
+        prefs.put("agentID", id);
+    }
 }

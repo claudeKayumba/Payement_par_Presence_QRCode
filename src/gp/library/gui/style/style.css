@@ -51,8 +51,8 @@
 .pagination > .pagination-control > .control-box > .right-arrow-button {
     -fx-background-insets: 0, 1;
     -fx-background-color: lightgray, #FAFAFA;
-    -fx-min-width: 50;
-    -fx-min-height: 50;
+    -fx-min-width: 40;
+    -fx-min-height: 40;
 }
 
 /* Colors on hover */

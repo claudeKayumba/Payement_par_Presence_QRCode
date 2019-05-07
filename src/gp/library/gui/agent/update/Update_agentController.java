@@ -6,6 +6,7 @@
 package gp.library.gui.agent.update;
 
 import com.github.javafaker.Faker;
+import com.google.zxing.WriterException;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
@@ -15,6 +16,9 @@ import gp.library.model.ModeleAgent;
 import gp.library.model.ModeleFonctionService;
 import gp.library.model.ModeleService;
 import gp.library.utils.MyWindow;
+import gp.library.utils.QRCode;
+import gp.library.utils.SharedPreferences;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -39,6 +43,8 @@ public class Update_agentController implements Initializable {
     public static ModeleAgent agent = ModeleAgent.getInstance();
     public static ModeleService service = ModeleService.getInstance();
     public static ModeleFonctionService fonction = ModeleFonctionService.getInstance();
+
+    SharedPreferences prefs = new SharedPreferences();
     public static boolean isUpdate = false;
 
     @FXML
@@ -77,34 +83,41 @@ public class Update_agentController implements Initializable {
             Logger.getLogger(Update_agentController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public void setData(){
+
+    public void setData() {
         if (isUpdate) {
             agent.setId(agent.getId());
             txt_nom.setText(agent.getNom());
             txt_postnom.setText(agent.getPostnom());
             txt_date.setValue(helper.LOCAL_DATE(agent.getDateNaiss()));
-            txt_salaire.setText(""+agent.getSalaire());
+            txt_salaire.setText("" + agent.getSalaire());
             cmb_fonction.setValue(agent.getFonction().getDesignation());
             cmb_service.setValue(agent.getService().getDesignation());
             gender.selectToggle(agent.getGenre() == "M" ? rd_m : rd_f);
-        }else{
-            agent.setId(0);
+        } else {
+            agent.setId(prefs.getAgentID());
         }
-        
+
     }
-    
+
     @FXML
     private void initFields(ActionEvent event) {
         MyWindow.initFields(txt_nom, txt_postnom, txt_date, txt_salaire, cmb_fonction, cmb_service);
         gender.selectToggle(null);
+        agent.setId(prefs.getAgentID());
     }
 
     @FXML
-    private void saveData(ActionEvent event) {
+    private void saveData(ActionEvent event) throws WriterException, IOException {
 //        test();
         if (!MyWindow.isFieldsempty(txt_nom, txt_postnom, txt_date, txt_salaire, cmb_fonction, cmb_service)) {
             try {
+                if (!isUpdate) {
+                    prefs.setAgentID(helper.getValue("SELECT FORMAT((NEXT VALUE FOR seqMatricule),CONCAT('AG-',YEAR(GETDATE()),'-00#'))").toString());
+                    agent.setId(prefs.getAgentID());
+                    prefs.setAgentID(helper.getValue("SELECT FORMAT((NEXT VALUE FOR seqMatricule),CONCAT('AG-',YEAR(GETDATE()),'-00#'))").toString());
+                }
+
                 service.setDesignation(cmb_service.getSelectionModel().getSelectedItem());
                 fonction.setDesignation(cmb_fonction.getSelectionModel().getSelectedItem());
 
@@ -135,7 +148,7 @@ public class Update_agentController implements Initializable {
             for (int i = 1; i <= 25; i++) {
                 service.setDesignation(cmb_service.getSelectionModel().getSelectedItem());
                 fonction.setDesignation(cmb_fonction.getSelectionModel().getSelectedItem());
-                agent.setId(i);
+                agent.setId("");
                 agent.setNom(data.name().firstName());
                 agent.setPostnom(data.name().lastName());
                 agent.setDateNaiss(txt_date.getValue().toString());
@@ -146,7 +159,7 @@ public class Update_agentController implements Initializable {
 
                 if (helper.update(agent)) {
                     System.out.println("ok");
-                }else{
+                } else {
                     System.out.println("pas ok");
                 }
             }

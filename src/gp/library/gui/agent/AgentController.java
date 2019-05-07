@@ -74,9 +74,10 @@ public class AgentController implements Initializable {
         try {
             listAgent = helper.getAgentList("select * from v_liste_agent");
             
+            int pageCount = (listAgent.size() == 0 ? 1 : listAgent.size() % rowsPerPage() != 0 ? listAgent.size() / rowsPerPage() + 1 : listAgent.size() / rowsPerPage());
             table_list = new VBox(5);
             table_list.setAlignment(Pos.CENTER);//listAgent.size() % 2 == 0 ? (listAgent.size() / rowsPerPage()) : 
-            pagination.setPageCount(listAgent.size() % rowsPerPage() != 0 ? listAgent.size() / rowsPerPage() + 1 : listAgent.size() / rowsPerPage());
+            pagination.setPageCount(pageCount);
             pagination.setCurrentPageIndex(0);
 //            pagination = new Pagination((listAgent.size() / rowsPerPage() + 1), 0);
             pagination.setStyle("-fx-border-color:red;");
@@ -86,7 +87,11 @@ public class AgentController implements Initializable {
                     if (pageIndex > listAgent.size() / rowsPerPage() + 1) { //+1
                         return null;
                     } else {
-                        return createPage(pageIndex);
+                        if (listAgent.size() == 0) {
+                            return null;
+                        }else{
+                            return createPage(pageIndex);
+                        }
                     }
                 }
             });

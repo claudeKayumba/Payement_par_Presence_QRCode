@@ -77,7 +77,7 @@ public class List_agentController implements Initializable {
             Update_agentController.isUpdate = true;
             Update_agentController.fonction.setDesignation(fonction.getText());
             Update_agentController.service.setDesignation(service.getText());
-            Update_agentController.agent.setId(Integer.valueOf(matricule.getText()));
+            Update_agentController.agent.setId(matricule.getText());
             Update_agentController.agent.setNom(nom.getText());
             Update_agentController.agent.setPostnom(postnom.getText());
             Update_agentController.agent.setGenre(genre.getText());
@@ -94,7 +94,7 @@ public class List_agentController implements Initializable {
     @FXML
     private void deleteData(ActionEvent event){
         try {
-            if (helper.deleteFromDatabase("DELETE FROM tAgent WHERE id = "+matricule.getText()+"")) {
+            if (helper.deleteFromDatabase("DELETE FROM tAgent WHERE matricule = '"+matricule.getText()+"'")) {
                 
                 MyWindow.dialogAvertissement("Message", "Supprimé");
             }
