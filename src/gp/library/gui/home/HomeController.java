@@ -98,4 +98,10 @@ public class HomeController implements Initializable {
         MyWindow.makeURLJira(container, getClass().getResource(MyConstant.USER));
     }
 
+    @FXML
+    private void goToPayement(ActionEvent event) {
+        setButtonStyle((JFXButton) event.getSource());
+        MyWindow.makeURLJira(container, getClass().getResource(MyConstant.PAYEMENT));
+    }
+
 }

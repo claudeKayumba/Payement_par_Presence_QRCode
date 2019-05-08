@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="395.0" prefWidth="322.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="gp.library.gui.qrscanner.QRCodeGenerateController">
+   <children>
+      <VBox layoutX="36.0" layoutY="85.0" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: fff;">
+         <effect>
+            <DropShadow color="#e1e1e1" />
+         </effect>
+         <children>
+            <ImageView fx:id="imageQR" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" smooth="false" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+      <JFXButton buttonType="RAISED" layoutX="63.0" layoutY="346.0" onAction="#generateQR" prefHeight="30.0" prefWidth="197.0" style="-fx-background-color: #F39C12;" text="Enregistrer l'image sous" textFill="WHITE">
+         <font>
+            <Font name="Roboto Medium" size="14.0" />
+         </font>
+         <graphic>
+            <MaterialDesignIconView fill="WHITE" glyphName="FOLDER_IMAGE" size="20" />
+         </graphic>
+      </JFXButton>
+      <AnchorPane layoutX="14.0" layoutY="7.0" prefHeight="58.0" prefWidth="295.0" style="-fx-background-color: #00C0EF; -fx-border-radius: 4; -fx-background-radius: 4; -fx-border-color: #009ABF; -fx-border-width: 0 0 0 4;">
+         <children>
+            <Label layoutX="14.0" layoutY="5.0" prefHeight="20.0" prefWidth="30.0" text="NB : " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="25.0" prefHeight="42.0" prefWidth="277.0" text="Cettte image ne servira que pour la presence à la place de la carte pour un certain temps" textFill="WHITE" wrapText="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

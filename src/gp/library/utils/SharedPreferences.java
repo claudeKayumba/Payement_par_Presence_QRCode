@@ -115,4 +115,12 @@ public class SharedPreferences {
     public void setAgentID(String id){
         prefs.put("agentID", id);
     }
+    
+    public String getPresenceID(){
+        return prefs.get("presenceID", "prence");
+    }
+    
+    public void setPresenceID(String id){
+        prefs.put("presenceID", id);
+    }
 }

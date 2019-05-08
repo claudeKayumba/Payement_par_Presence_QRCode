@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Gestion Pesence.jnlp">
+  <information>
+    <title>Gestion Pesence</title>
+    <vendor>Admin</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\bridj-0.7.0.jar" size="935929" download="eager" />
+    <jar href="lib\controlsfx-8.40.14.jar" size="1215643" download="eager" />
+    <jar href="lib\core-2.2.jar" size="520331" download="eager" />
+    <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib\fontawesomefx-commons-8.15.jar" size="20957" download="eager" />
+    <jar href="lib\fontawesomefx-controls-8.15.jar" size="3369" download="eager" />
+    <jar href="lib\fontawesomefx-fontawesome-4.7.0-5.jar" size="136891" download="eager" />
+    <jar href="lib\fontawesomefx-icons525-3.0.0-4.jar" size="110545" download="eager" />
+    <jar href="lib\fontawesomefx-materialicons-2.2.0-5.jar" size="103686" download="eager" />
+    <jar href="lib\javafaker-0.12.jar" size="630461" download="eager" />
+    <jar href="lib\javase-2.2.jar" size="39692" download="eager" />
+    <jar href="lib\jfoenix.jar" size="2142035" download="eager" />
+    <jar href="lib\slf4j-api-1.7.10.jar" size="32119" download="eager" />
+    <jar href="lib\sqljdbc4-2.0.jar" size="466359" download="eager" />
+    <jar href="lib\webcam-capture-0.3.12.jar" size="428297" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Gestion Pesence" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="gp.library.gui.main.Main"  name="Gestion Pesence" />
+  <update check="always"/>
+</jnlp>

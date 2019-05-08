@@ -5,7 +5,9 @@
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
@@ -57,7 +59,7 @@
                         <MaterialDesignIconView fill="#8facbf" glyphName="ACCOUNT_MULTIPLE" size="20" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="330.0" maxWidth="1.7976931348623157E308" styleClass="side-menu-btn" text="Payement" textAlignment="CENTER" textFill="#8facbf">
+                  <JFXButton alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="330.0" maxWidth="1.7976931348623157E308" onAction="#goToPayement" styleClass="side-menu-btn" text="Payement" textAlignment="CENTER" textFill="#8facbf">
                      <graphic>
                         <FontAwesomeIconView fill="#8facbf" glyphName="DOLLAR" size="20" textAlignment="CENTER" />
                      </graphic>
@@ -253,41 +255,66 @@
                                                 <DropShadow color="LIGHTGRAY" height="50.0" radius="24.5" width="50.0" />
                                              </effect>
                                           </VBox>
-                                          <VBox alignment="CENTER" layoutX="430.0" layoutY="20.0" prefHeight="550.0" prefWidth="262.0" style="-fx-background-color: fff;" HBox.hgrow="ALWAYS">
+                                          <VBox alignment="CENTER" layoutX="430.0" layoutY="20.0" prefHeight="550.0" prefWidth="262.0" spacing="40.0" style="-fx-background-color: fff;" HBox.hgrow="ALWAYS">
                                              <HBox.margin>
                                                 <Insets left="10.0" />
                                              </HBox.margin>
                                              <effect>
                                                 <DropShadow color="LIGHTGRAY" height="50.0" radius="24.5" width="50.0" />
                                              </effect>
+                                             <children>
+                                                <AnchorPane prefHeight="72.0" prefWidth="465.0" style="-fx-background-color: #00C0EF; -fx-border-radius: 4; -fx-background-radius: 4; -fx-border-color: #009ABF; -fx-border-width: 0 0 0 4;">
+                                                   <children>
+                                                      <Label layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="137.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;" text="Reminder !" />
+                                                      <Label layoutX="14.0" layoutY="37.0" prefHeight="30.0" prefWidth="361.0" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: white;" text="This is danger reminder" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="72.0" prefWidth="465.0" style="-fx-background-color: #DD4B39; -fx-border-radius: 4; -fx-background-radius: 4; -fx-border-color: #B03C2D; -fx-border-width: 0 0 0 4;">
+                                                   <children>
+                                                      <Label layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="137.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;" text="Reminder !" />
+                                                      <Label layoutX="14.0" layoutY="37.0" prefHeight="30.0" prefWidth="361.0" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: white;" text="This is danger reminder" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="72.0" prefWidth="465.0" style="-fx-background-color: #F39C12; -fx-border-radius: 4; -fx-background-radius: 4; -fx-border-color: #C27C0E; -fx-border-width: 0 0 0 4;">
+                                                   <children>
+                                                      <Label layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="137.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;" text="Reminder !" />
+                                                      <Label layoutX="14.0" layoutY="37.0" prefHeight="30.0" prefWidth="361.0" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: white;" text="This is warning reminder" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="72.0" prefWidth="465.0" style="-fx-background-color: #00A65A; -fx-border-radius: 4; -fx-background-radius: 4; -fx-border-color: #008448; -fx-border-width: 0 0 0 4;">
+                                                   <children>
+                                                      <Label layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="137.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;" text="Reminder !" />
+                                                      <Label layoutX="14.0" layoutY="37.0" prefHeight="30.0" prefWidth="361.0" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: white;" text="This is success reminder" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
                                           </VBox>
                                        </children>
                                        <padding>
                                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                        </padding>
                                     </HBox>
-                                    <HBox alignment="CENTER" prefHeight="135.0" prefWidth="920.0">
-                                       <children>
-                                          <VBox alignment="CENTER" prefHeight="550.0" prefWidth="400.0" style="-fx-background-color: fff;" HBox.hgrow="ALWAYS">
-                                             <HBox.margin>
-                                                <Insets right="10.0" />
-                                             </HBox.margin>
-                                             <effect>
-                                                <DropShadow color="LIGHTGRAY" height="50.0" radius="24.5" width="50.0" />
-                                             </effect>
-                                          </VBox>
-                                          <VBox alignment="CENTER" layoutX="299.0" layoutY="20.0" prefHeight="550.0" prefWidth="400.0" style="-fx-background-color: fff;" HBox.hgrow="ALWAYS">
-                                             <HBox.margin>
-                                                <Insets left="10.0" />
-                                             </HBox.margin>
-                                             <effect>
-                                                <DropShadow color="LIGHTGRAY" height="50.0" radius="24.5" width="50.0" />
-                                             </effect>
-                                          </VBox>
-                                       </children>
+                                    <HBox alignment="CENTER" prefHeight="104.0" prefWidth="1020.0" spacing="10.0">
                                        <padding>
                                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                        </padding>
+                                       <children>
+                                          <AnchorPane prefHeight="72.0" prefWidth="465.0" style="-fx-background-color: #ff993e; -fx-border-radius: 4; -fx-background-radius: 4; -fx-border-color: #C27C0E; -fx-border-width: 0 0 0 4;" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="137.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;" text="Reminder !" />
+                                                <Label layoutX="14.0" layoutY="37.0" prefHeight="30.0" prefWidth="361.0" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: white;" text="This is warning reminder" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="72.0" prefWidth="465.0" style="-fx-background-color: #ff993e; -fx-border-radius: 4; -fx-background-radius: 4; -fx-border-color: #C27C0E; -fx-border-width: 0 0 0 4;" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="137.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;" text="Reminder !" />
+                                                <Label layoutX="14.0" layoutY="37.0" prefHeight="30.0" prefWidth="361.0" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: white;" text="This is warning reminder" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
                                     </HBox>
                                  </children>
                               </VBox>

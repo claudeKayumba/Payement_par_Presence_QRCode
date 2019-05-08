@@ -52,6 +52,7 @@ public class MyWindow {
             Stage stage = null;
             if (parentStage != null) {
                 stage = parentStage;
+                stage = new Stage(StageStyle.UNDECORATED);
                 stage.initModality(Modality.APPLICATION_MODAL);
             } else {
                 stage = new Stage(StageStyle.DECORATED);
@@ -108,7 +109,7 @@ public class MyWindow {
         JFXDialog dialog;
         Node node = FXMLLoader.load(location);
         JFXDialogLayout dl = new JFXDialogLayout();
-//        dl.setPadding(Insets.EMPTY);
+        dl.setPadding(new Insets(20,10,20,10));
         dl.setHeading(new Label(title));
         dl.setBody(node);
         dialog = new JFXDialog(rootPane, dl, transition, false);
@@ -194,13 +195,13 @@ public class MyWindow {
         for (Node f : field) {
             if (f instanceof TextField) {
                 TextField text = (TextField) f;
-                text.setText(null);
+                text.clear();
             } else if (f instanceof DatePicker) {
                 DatePicker text = (DatePicker) f;
                 text.setValue(null);
             } else if (f instanceof TextArea) {
                 TextArea text = (TextArea) f;
-                text.setText(null);
+                text.clear();
             } else if (f instanceof ComboBox) {
                 ComboBox text = (ComboBox) f;
                 text.setValue(null);

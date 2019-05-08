@@ -11,49 +11,39 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="455.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gp.library.gui.qrscanner.Camera_scannerController">
+<AnchorPane id="AnchorPane" prefHeight="455.0" prefWidth="600.0" style="-fx-background-color: #343A3E;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gp.library.gui.qrscanner.Camera_scannerController">
    <children>
-      <Label layoutX="20.0" layoutY="410.0" text="Status :">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblStatus" layoutX="66.0" layoutY="410.0" style="-fx-text-fill: green;" text="Scanning Barcode ...">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <AnchorPane fx:id="webcamContainerAnchorPane" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="320.0" style="-fx-background-color: #F4F4F4; -fx-border-radius: 10px;">
+      <AnchorPane fx:id="webcamContainerAnchorPane" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="320.0" style="-fx-background-color: #32373B; -fx-border-color: #008448; -fx-border-width: 5;">
          <effect>
-            <DropShadow color="#dadada" />
+            <DropShadow color="#252525" />
          </effect>
       </AnchorPane>
-      <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="475.0" layoutY="8.0" onAction="#fillData" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: #13b172; -fx-border-radius: 4em; -fx-background-radius: 4em;" text="Parcourir" textFill="WHITE">
+      <JFXButton alignment="CENTER" layoutX="524.0" layoutY="1.0" onAction="#fillData" prefHeight="28.0" prefWidth="75.0" style="-fx-background-color: #DD4B39; -fx-background-radius: 0;" text="Fermer" textFill="WHITE">
          <font>
             <Font name="Century Gothic Bold" size="10.0" />
          </font>
          <graphic>
-            <MaterialDesignIconView fill="WHITE" glyphName="QRCODE" size="20" />
+            <MaterialDesignIconView fill="WHITE" glyphName="CLOSE" size="20" />
          </graphic>
       </JFXButton>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="289.0" layoutY="209.0" pickOnBounds="true" smooth="false">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="284.0" layoutY="204.0" pickOnBounds="true" smooth="false">
          <image>
             <Image url="@../images/QRCode2.png" />
          </image>
       </ImageView>
-      <Pane layoutX="52.0" layoutY="284.0" prefHeight="119.0" prefWidth="490.0" style="-fx-border-color: #bac3d0;">
+      <Pane layoutX="52.0" layoutY="284.0" prefHeight="119.0" prefWidth="490.0" style="-fx-border-color: #00A65A; -fx-border-radius: 5;">
          <children>
             <Text fill="#bac3d0" layoutX="52.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GENRE">
                <font>
                   <Font name="Century Gothic Bold" size="12.0" />
                </font>
             </Text>
-            <Text fx:id="genre" fill="#343a3e" layoutX="52.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
+            <Text fx:id="genre" fill="#00a65a" layoutX="52.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
                <font>
                   <Font name="Century Gothic Bold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="matricule" fill="#343a3e" layoutX="50.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="545-NHJ">
+            <Text fx:id="matricule" fill="#00a65a" layoutX="50.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="545-NHJ">
                <font>
                   <Font name="Century Gothic Bold" size="16.0" />
                </font>
@@ -68,7 +58,7 @@
                   <Font name="Century Gothic Bold" size="12.0" />
                </font>
             </Text>
-            <Text fx:id="service" fill="#343a3e" layoutX="267.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
+            <Text fx:id="service" fill="#00a65a" layoutX="267.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
                <font>
                   <Font name="Century Gothic Bold" size="16.0" />
                </font>
@@ -78,16 +68,16 @@
                   <Font name="Century Gothic Bold" size="12.0" />
                </font>
             </Text>
-            <Text fx:id="fonction" fill="#343a3e" layoutX="268.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
+            <Text fx:id="fonction" fill="#00a65a" layoutX="268.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
                <font>
                   <Font name="Century Gothic Bold" size="16.0" />
                </font>
             </Text>
          </children>
       </Pane>
-      <Pane layoutX="348.0" layoutY="66.0" prefHeight="111.0" prefWidth="244.0" style="-fx-background-color: fff;">
+      <Pane layoutX="348.0" layoutY="66.0" prefHeight="111.0" prefWidth="244.0" style="-fx-background-color: #00A65A; -fx-border-color: #008448; -fx-border-width: 0 0 0 5;">
          <effect>
-            <DropShadow color="#e4e4e4" />
+            <DropShadow color="#323232" />
          </effect>
          <children>
             <Text fill="#bac3d0" layoutX="23.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM">
@@ -95,7 +85,7 @@
                   <Font name="Century Gothic Bold" size="12.0" />
                </font>
             </Text>
-            <Text fx:id="nom" fill="#343a3e" layoutX="23.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
+            <Text fx:id="nom" fill="WHITE" layoutX="23.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
                <font>
                   <Font name="Century Gothic Bold" size="16.0" />
                </font>
@@ -105,12 +95,26 @@
                   <Font name="Century Gothic Bold" size="12.0" />
                </font>
             </Text>
-            <Text fx:id="postnom" fill="#343a3e" layoutX="24.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
+            <Text fx:id="postnom" fill="WHITE" layoutX="24.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
                <font>
                   <Font name="Century Gothic Bold" size="16.0" />
                </font>
             </Text>
          </children>
       </Pane>
+      <AnchorPane layoutX="15.0" layoutY="413.0" prefHeight="35.0" prefWidth="571.0" style="-fx-background-color: #00A65A; -fx-border-radius: 4; -fx-background-radius: 4; -fx-border-color: #008448; -fx-border-width: 0 0 0 4;">
+         <children>
+            <Label layoutX="34.0" layoutY="8.0" text="Status :">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblStatus" layoutX="80.0" layoutY="8.0" text="Scanning Barcode ..." textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

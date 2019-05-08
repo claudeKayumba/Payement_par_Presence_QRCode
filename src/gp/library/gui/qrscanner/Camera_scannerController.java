@@ -18,10 +18,20 @@ import com.google.zxing.Result;
 import com.google.zxing.Writer;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
+import gp.library.database.dao.DatabaseHelper;
+import gp.library.model.ModeleAgent;
+import gp.library.model.ModeleSigner;
+import gp.library.utils.MyWindow;
+import gp.library.utils.SharedPreferences;
 import java.awt.image.BufferedImage;
 import java.net.URL;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,6 +51,10 @@ import org.slf4j.LoggerFactory;
  */
 public class Camera_scannerController implements Initializable {
 
+    DatabaseHelper helper = new DatabaseHelper();
+    ModeleSigner signer = ModeleSigner.getInstance();
+    ObservableList<ModeleAgent> listAgent;
+    SharedPreferences prefs = new SharedPreferences();
     private static Logger logger = LoggerFactory.getLogger(Camera_scannerController.class);
 
     @FXML
@@ -88,10 +102,6 @@ public class Camera_scannerController implements Initializable {
         initUI();
         barcodeScannerRunnable = getBarcodeReaderThread();
         new Thread(barcodeScannerRunnable).start();
-
-//        ((Stage) webcamContainerAnchorPane.getScene().getWindow()).setOnCloseRequest(event -> {
-//            onClose();
-//        });
     }
 
     private void initUI() {
@@ -99,7 +109,6 @@ public class Camera_scannerController implements Initializable {
             webcamContainerAnchorPane.getChildren().clear();
             webcamContainerAnchorPane.getChildren().add(defaultWebcamPanelNode);
         });
-//        btnGenerate.setOnAction(event -> generateBarcode());
 
     }
 
@@ -121,10 +130,10 @@ public class Camera_scannerController implements Initializable {
                         if (result != null && result.getText() != null) {
                             if (lastResult == null) {
                                 logger.info("Barcode text is " + result.getText());
-                                Platform.runLater(() -> matricule.setText(result.getText()));
+                                Platform.runLater(() -> getResult(result.getText()));
                             } else if (lastResult.getText() != null && !lastResult.getText().equals(result.getText())) {
                                 logger.info("Barcode text is " + result.getText());
-                                Platform.runLater(() -> matricule.setText(result.getText()));
+                                Platform.runLater(() -> getResult(result.getText()));
                             }
                         }
                         lastResult = result;
@@ -133,9 +142,31 @@ public class Camera_scannerController implements Initializable {
                     } catch (Exception ex) {
                         logger.error("Exception while reading barcode : ", ex);
                     }
+
                 }
             }
         };
+    }
+
+    private void getResult(String result) {
+        try {
+            listAgent = helper.getAgentList("select * from v_liste_agent where matricule='" + result + "'");
+            signer.setAgent(result);
+            signer.setPresence(prefs.getPresenceID());
+            signer.setDate(Date.valueOf(LocalDate.now()));
+            MyWindow.initFields(matricule, nom, postnom, genre, fonction, service);
+            if (helper.update(signer)) {
+                matricule.setText(result);
+                nom.setText(listAgent.get(0).getNom());
+                postnom.setText(listAgent.get(0).getPostnom());
+                genre.setText(listAgent.get(0).getGenre());
+                fonction.setText(listAgent.get(0).getFonction().getDesignation());
+                service.setText(listAgent.get(0).getService().getDesignation());
+            }
+
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(Camera_scannerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
@@ -146,6 +177,7 @@ public class Camera_scannerController implements Initializable {
     public void onClose() {
         defaultWebcam.close();
         logger.info("Closing Application Root Controller");
+        ((Stage) lblStatus.getScene().getWindow()).close();
     }
 
 }

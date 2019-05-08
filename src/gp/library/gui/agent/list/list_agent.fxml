@@ -2,86 +2,70 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
-<?import javafx.scene.effect.DropShadow?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxWidth="1.7976931348623157E308" prefHeight="135.0" prefWidth="957.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gp.library.gui.agent.list.List_agentController">
+<AnchorPane id="AnchorPane" maxWidth="1.7976931348623157E308" prefHeight="59.0" prefWidth="957.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gp.library.gui.agent.list.List_agentController">
    <children>
-      <AnchorPane layoutX="26.0" layoutY="13.0" prefHeight="109.0" prefWidth="800.0" style="-fx-background-color: fff;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="23.0" prefHeight="63.0" prefWidth="926.0" spacing="10.0" style="-fx-background-color: fff;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <children>
-            <MaterialDesignIconView fill="#343a3e" glyphName="QRCODE_SCAN" layoutX="14.0" layoutY="40.0" size="30" />
-            <Text fill="#bac3d0" layoutX="59.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MATRICULE">
-               <font>
-                  <Font name="Century Gothic Bold" size="12.0" />
-               </font>
-            </Text>
-            <Text fx:id="matricule" fill="#343a3e" layoutX="59.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="545-NHJ">
-               <font>
-                  <Font name="Century Gothic Bold" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#bac3d0" layoutX="185.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM">
-               <font>
-                  <Font name="Century Gothic Bold" size="12.0" />
-               </font>
-            </Text>
-            <Text fx:id="nom" fill="#343a3e" layoutX="185.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM">
-               <font>
-                  <Font name="Century Gothic Bold" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#bac3d0" layoutX="361.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SALAIRE">
-               <font>
-                  <Font name="Century Gothic Bold" size="12.0" />
-               </font>
-            </Text>
-            <Text fx:id="salaire" fill="#343a3e" layoutX="361.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SALAIRE">
-               <font>
-                  <Font name="Century Gothic Bold" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#bac3d0" layoutX="185.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POSTNOM">
-               <font>
-                  <Font name="Century Gothic Bold" size="12.0" />
-               </font>
-            </Text>
-            <Text fx:id="postnom" fill="#343a3e" layoutX="185.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POSTNOM">
-               <font>
-                  <Font name="Century Gothic Bold" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#bac3d0" layoutX="361.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GENRE">
-               <font>
-                  <Font name="Century Gothic Bold" size="12.0" />
-               </font>
-            </Text>
-            <Text fx:id="genre" fill="#343a3e" layoutX="361.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M">
-               <font>
-                  <Font name="Century Gothic Bold" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#bac3d0" layoutX="532.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ANNIVERSSAIRE">
-               <font>
-                  <Font name="Century Gothic Bold" size="12.0" />
-               </font>
-            </Text>
-            <Text fx:id="dateNaiss" fill="#343a3e" layoutX="532.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15.02.1997">
-               <font>
-                  <Font name="Century Gothic Bold" size="16.0" />
-               </font>
-            </Text>
-            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="705.0" layoutY="24.0" onAction="#updateAgent" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #3070ac; -fx-border-radius: 4em; -fx-background-radius: 4em;" text=" " textFill="WHITE" AnchorPane.rightAnchor="50.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="matricule" prefHeight="17.0" prefWidth="99.0" text="matricule">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="114.0">
+               <children>
+                  <Label fx:id="nom" prefHeight="17.0" prefWidth="140.0" text="nom" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="99.0">
+               <children>
+                  <Label fx:id="postnom" prefHeight="17.0" prefWidth="116.0" text="postnom" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="60.0">
+               <children>
+                  <Label fx:id="genre" text="M" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="dateNaiss" prefHeight="17.0" prefWidth="100.0" text="date naisse" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="58.0">
+               <children>
+                  <Label fx:id="salaire" prefHeight="17.0" prefWidth="58.0" text="salaire" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="110.0">
+               <children>
+                  <Label fx:id="service" prefHeight="17.0" prefWidth="122.0" text="service" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="115.0">
+               <children>
+                  <Label fx:id="fonction" prefHeight="17.0" prefWidth="112.0" text="fonction" />
+               </children>
+            </VBox>
+            <JFXButton buttonType="RAISED" contentDisplay="CENTER" onAction="#updateAgent" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #3070ac; -fx-border-radius: 4em; -fx-background-radius: 4em;" text=" " textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="10.0" />
                </font>
                <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="14" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="EDIT" size="14" />
                </graphic>
             </JFXButton>
-            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="705.0" layoutY="69.0" onAction="#deleteData" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #ff3705; -fx-border-radius: 4em; -fx-background-radius: 4em;" text=" " textFill="WHITE" AnchorPane.rightAnchor="50.0">
+            <JFXButton buttonType="RAISED" contentDisplay="CENTER" onAction="#deleteData" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #ff3705; -fx-border-radius: 4em; -fx-background-radius: 4em;" text=" " textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="10.0" />
                </font>
@@ -89,30 +73,18 @@
                   <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="14" />
                </graphic>
             </JFXButton>
-            <Text fill="#bac3d0" layoutX="532.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SERVICE">
+            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="856.0" layoutY="17.0" onAction="#generateQR" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #3070ac; -fx-border-radius: 4em; -fx-background-radius: 4em;" text=" " textFill="WHITE">
                <font>
-                  <Font name="Century Gothic Bold" size="12.0" />
+                  <Font name="Century Gothic Bold" size="10.0" />
                </font>
-            </Text>
-            <Text fx:id="service" fill="#343a3e" layoutX="532.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SERVICE">
-               <font>
-                  <Font name="Century Gothic Bold" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#bac3d0" layoutX="691.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FONCTION">
-               <font>
-                  <Font name="Century Gothic Bold" size="12.0" />
-               </font>
-            </Text>
-            <Text fx:id="fonction" fill="#343a3e" layoutX="691.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FONCTION">
-               <font>
-                  <Font name="Century Gothic Bold" size="16.0" />
-               </font>
-            </Text>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="QRCODE" size="14" />
+               </graphic>
+            </JFXButton>
          </children>
-         <effect>
-            <DropShadow color="#d3d3d3" />
-         </effect>
-      </AnchorPane>
+         <padding>
+            <Insets left="10.0" right="5.0" />
+         </padding>
+      </HBox>
    </children>
 </AnchorPane>

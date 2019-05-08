@@ -75,7 +75,7 @@ public class AgentController implements Initializable {
             listAgent = helper.getAgentList("select * from v_liste_agent");
             
             int pageCount = (listAgent.size() == 0 ? 1 : listAgent.size() % rowsPerPage() != 0 ? listAgent.size() / rowsPerPage() + 1 : listAgent.size() / rowsPerPage());
-            table_list = new VBox(5);
+            table_list = new VBox();
             table_list.setAlignment(Pos.CENTER);//listAgent.size() % 2 == 0 ? (listAgent.size() / rowsPerPage()) : 
             pagination.setPageCount(pageCount);
             pagination.setCurrentPageIndex(0);

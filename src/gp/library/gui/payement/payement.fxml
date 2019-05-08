@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gp.library.gui.payement.PayementController">
+   <children>
+      <AnchorPane layoutX="23.0" layoutY="14.0" prefHeight="69.0" prefWidth="880.0" style="-fx-background-color: #00C0EF; -fx-border-radius: 4; -fx-background-radius: 4; -fx-border-color: #009ABF; -fx-border-width: 0 0 0 4;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <children>
+            <Label layoutX="15.0" layoutY="2.0" prefHeight="30.0" prefWidth="292.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;" text="Reminder !" />
+            <Label layoutX="15.0" layoutY="32.0" prefHeight="30.0" prefWidth="806.0" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: white;" text="This is one biiig notification that spans the full width of its parent container.Subscribe to my channel for  more" />
+            <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="856.0" layoutY="22.0" onAction="#addPayement" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #BB184F; -fx-border-radius: 4em; -fx-background-radius: 4em;" text=" " textFill="WHITE" AnchorPane.bottomAnchor="-10.0" AnchorPane.rightAnchor="-10.0">
+               <font>
+                  <Font name="Century Gothic Bold" size="10.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="PLUS" size="20" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

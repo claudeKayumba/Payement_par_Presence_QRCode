@@ -10,6 +10,7 @@ package gp.library.utils;
  * @author Admin
  */
 public class MyConstant {
+
     public static final String SERVER = "/gp/library/gui/config/server.fxml";
     public static final String LOGIN = "/gp/library/gui/login/login.fxml";
     public static final String HOME = "/gp/library/gui/home/home.fxml";
@@ -21,13 +22,17 @@ public class MyConstant {
     public static final String SERVICEFONCTION = "/gp/library/gui/service/serviceFonction.fxml";
     public static final String USER = "/gp/library/gui/user/user.fxml";
     public static final String PRESENCE = "/gp/library/gui/presence/presence.fxml";
+    public static final String ADD_PRESENCE_ID = "/gp/library/gui/presence/add_presence.fxml";
     public static final String UPDATE_PRESENCE = "/gp/library/gui/presence/update/update_presence.fxml";
     public static final String LIST_PRESENCE = "/gp/library/gui/presence/list/list_presence.fxml";
     public static final String QRCODE_CAMERA_SCANNER = "/gp/library/gui/qrscanner/camera_scanner.fxml";
-    
+    public static final String QRCODE_GENERATE = "/gp/library/gui/qrscanner/QRCodeGenerate.fxml";
+    public static final String PAYEMENT = "/gp/library/gui/payement/payement.fxml";
+    public static final String UPDATE_PAYEMENT = "/gp/library/gui/payement/update_payement.fxml";
+
     public static String AVANTAGE = "AVANTAGE";
     public static String RETENU = "RETENU";
     public static String SERVICE = "SERVICE";
     public static String FONCTION = "FONCTION";
-    
+
 }

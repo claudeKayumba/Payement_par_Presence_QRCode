@@ -26,6 +26,8 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -76,6 +78,14 @@ public class Update_agentController implements Initializable {
 
     private void init() {
         try {
+            txt_salaire.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d{0,9}([\\.]\\d{0,4})?")) {
+                    txt_salaire.setText(oldValue);
+                }
+            }
+        });
             setData();
             helper.fillComboBox(cmb_fonction, "SELECT DISTINCT designation FROM tFonction");
             helper.fillComboBox(cmb_service, "SELECT DISTINCT designation FROM tService");
@@ -93,7 +103,8 @@ public class Update_agentController implements Initializable {
             txt_salaire.setText("" + agent.getSalaire());
             cmb_fonction.setValue(agent.getFonction().getDesignation());
             cmb_service.setValue(agent.getService().getDesignation());
-            gender.selectToggle(agent.getGenre() == "M" ? rd_m : rd_f);
+            gender.selectToggle(agent.getGenre().equals("M") ? rd_m : rd_f);
+            System.out.println(agent.getGenre());
         } else {
             agent.setId(prefs.getAgentID());
         }
@@ -113,9 +124,7 @@ public class Update_agentController implements Initializable {
         if (!MyWindow.isFieldsempty(txt_nom, txt_postnom, txt_date, txt_salaire, cmb_fonction, cmb_service)) {
             try {
                 if (!isUpdate) {
-                    prefs.setAgentID(helper.getValue("SELECT FORMAT((NEXT VALUE FOR seqMatricule),CONCAT('AG-',YEAR(GETDATE()),'-00#'))").toString());
                     agent.setId(prefs.getAgentID());
-                    prefs.setAgentID(helper.getValue("SELECT FORMAT((NEXT VALUE FOR seqMatricule),CONCAT('AG-',YEAR(GETDATE()),'-00#'))").toString());
                 }
 
                 service.setDesignation(cmb_service.getSelectionModel().getSelectedItem());
@@ -131,6 +140,9 @@ public class Update_agentController implements Initializable {
 
                 if (helper.update(agent)) {
                     MyWindow.dialogAvertissement("Message", "Enregistré");
+                    if (!isUpdate) {
+                        prefs.setAgentID(helper.getValue("SELECT FORMAT((NEXT VALUE FOR seqMatricule),CONCAT('AG-',YEAR(GETDATE()),'-00#'))").toString());
+                    }
                 }
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Update_agentController.class.getName()).log(Level.SEVERE, null, ex);

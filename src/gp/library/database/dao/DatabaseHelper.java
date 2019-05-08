@@ -12,7 +12,9 @@ import gp.library.database.Database;
 import gp.library.model.ModeleAgent;
 import gp.library.model.ModeleAvantageRetenu;
 import gp.library.model.ModeleFonctionService;
+import gp.library.model.ModelePresence;
 import gp.library.model.ModeleService;
+import gp.library.model.ModeleSigner;
 import gp.library.model.ModeleUser;
 import gp.library.utils.QRCode;
 import gp.library.utils.SharedPreferences;
@@ -101,6 +103,26 @@ public class DatabaseHelper {
 
             pst.executeUpdate();
 
+            return true;
+        } else if (obj instanceof ModelePresence){
+            ModelePresence presence = (ModelePresence) obj;
+            pst = Database.getConnection().prepareStatement("INSERT INTO tPresence VALUES (?,?)");
+            pst.setInt(1, presence.getId());
+            pst.setString(2, presence.getDesignationMois());
+            
+            pst.executeUpdate();
+            
+            return true;
+        }else if (obj instanceof ModeleSigner) {
+            ModeleSigner signer = (ModeleSigner) obj;
+            
+            pst = Database.getConnection().prepareCall("EXEC sp_update_signer_presence ?,?,?");
+            pst.setString(1, signer.getPresence());
+            pst.setString(2, signer.getAgent());
+            pst.setDate(3, signer.getDate());
+
+            pst.executeUpdate();
+            
             return true;
         }
         return false;

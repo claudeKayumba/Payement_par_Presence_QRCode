@@ -21,20 +21,9 @@
          <children>
             <HBox alignment="CENTER_RIGHT" prefHeight="57.0" prefWidth="880.0" style="-fx-background-color: #F8F8F8;">
                <children>
-                  <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                  <HBox alignment="CENTER_LEFT" spacing="20.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="215.0" layoutY="21.0" onAction="#fillData" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #13b172; -fx-border-radius: 4em; -fx-background-radius: 4em;" text="Actualiser" textFill="WHITE">
-                           <font>
-                              <Font name="Century Gothic Bold" size="10.0" />
-                           </font>
-                           <graphic>
-                              <MaterialDesignIconView fill="WHITE" glyphName="ROTATE_RIGHT" size="20" />
-                           </graphic>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </JFXButton>
-                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="215.0" layoutY="21.0" onAction="#scanQRCode" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #3070ac; -fx-border-radius: 4em; -fx-background-radius: 4em;" text=" " textFill="WHITE">
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="215.0" layoutY="21.0" onAction="#scanQRCode" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #BB184F; -fx-border-radius: 4em; -fx-background-radius: 4em;" text=" " textFill="WHITE">
                            <font>
                               <Font name="Century Gothic Bold" size="10.0" />
                            </font>
@@ -42,8 +31,24 @@
                               <MaterialDesignIconView fill="WHITE" glyphName="QRCODE" size="20" />
                            </graphic>
                            <HBox.margin>
-                              <Insets left="20.0" />
+                              <Insets />
                            </HBox.margin>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #00A65A;" text="Actualiser" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="ROTATE_RIGHT" size="20" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onAction="#config" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #F39C12;" text="Configurer" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="SETTINGS" size="20" />
+                           </graphic>
                         </JFXButton>
                      </children>
                      <padding>

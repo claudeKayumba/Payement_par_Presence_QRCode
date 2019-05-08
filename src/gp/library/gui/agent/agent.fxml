@@ -4,6 +4,7 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Pagination?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
@@ -34,7 +35,7 @@
                               <Insets />
                            </HBox.margin>
                         </JFXButton>
-                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="215.0" layoutY="21.0" onAction="#saveAgent" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #3070ac; -fx-border-radius: 4em; -fx-background-radius: 4em;" text=" " textFill="WHITE">
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="215.0" layoutY="21.0" onAction="#saveAgent" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #BB184F; -fx-border-radius: 4em; -fx-background-radius: 4em;" text=" " textFill="WHITE">
                            <font>
                               <Font name="Century Gothic Bold" size="10.0" />
                            </font>
@@ -89,6 +90,97 @@
                <children>
                   <VBox fx:id="box_container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="980.0" style="-fx-background-color: fff;">
                      <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="926.0" spacing="10.0" style="-fx-background-color: fff;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="100.0">
+                                 <children>
+                                    <Label fx:id="matricule" prefHeight="17.0" prefWidth="99.0" text="MATRICULE" textFill="#727272">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="114.0">
+                                 <children>
+                                    <Label fx:id="nom" prefHeight="17.0" prefWidth="140.0" text="NOM" textFill="#727272">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="99.0">
+                                 <children>
+                                    <Label fx:id="postnom" prefHeight="17.0" prefWidth="116.0" text="POSTNOM" textFill="#727272">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="60.0">
+                                 <children>
+                                    <Label fx:id="genre" text="GENRE" textFill="#727272">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="100.0">
+                                 <children>
+                                    <Label fx:id="dateNaiss" prefHeight="25.0" prefWidth="96.0" text="ANNIVERSAIRE" textFill="#727272">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="58.0">
+                                 <children>
+                                    <Label fx:id="salaire" prefHeight="17.0" prefWidth="58.0" text="SALAIRE" textFill="#727272">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="110.0">
+                                 <children>
+                                    <Label fx:id="service" prefHeight="17.0" prefWidth="122.0" text="SERVICE" textFill="#727272">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="115.0">
+                                 <children>
+                                    <Label fx:id="fonction" prefHeight="17.0" prefWidth="112.0" text="FONCTION" textFill="#727272">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" layoutX="746.0" layoutY="10.0" prefHeight="49.0" prefWidth="115.0">
+                                 <children>
+                                    <Label fx:id="fonction1" prefHeight="25.0" prefWidth="65.0" text="ACTIONS" textFill="#727272">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" right="5.0" />
+                           </padding>
+                        </HBox>
                         <Pagination fx:id="pagination" maxPageIndicatorCount="0" pageCount="0" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
                      </children>
                   </VBox>

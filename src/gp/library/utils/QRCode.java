@@ -19,7 +19,7 @@ import java.io.IOException;
  * @author Admin
  */
 public class QRCode {
-    private static void generateQRCodeImageFile(String text, int width, int height, String filePath)
+    public static void generateQRCodeImageFile(String text, int width, int height, String filePath)
             throws WriterException, IOException {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height);
